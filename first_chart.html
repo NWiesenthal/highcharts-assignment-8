@@ -10,7 +10,36 @@
 
 <h1>My first chart with Highcharts</h1>
 <!-- add the div and the code below this comment -->
+<div id="container" style="width:50%; height:400px;"></div>
+<script src="js/themes/dark-blue.js"></script>
 
+<script>
+$(function () { 
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Fruit Consumption'
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges', 'Strawberries']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jacob',
+            data: [1, 0, 4, 6]
+        }, {
+            name: 'Jessica',
+            data: [5, 7, 3, 6]
+        }]
+    });
+});
+</script>
 
 </body>
 </html>

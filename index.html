@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>Hate Crimes Against People by Sexuality in the US</title>
+	
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+</head>
+<body>
+		<section id="crimes">
+		<h1>Hate Crimes Against People by Sexuality in the US</h1>
+		
+		<h2> By Nicole Wiesenthal</h2>
+		
+		<p>It is important to monitor hate crimes within the United States to show any trends or progress made over time. In the media, there has been great discussion about whether the United States has been making progress towards acceptance of other sexualities. Just this year, strides have been taken to legalize marriage. If the United States is truly making progress, it would make sense that there would be fewer hate crimes at lesbian, gay and bisexual individuals. By monitoring hate crimes, we can reveal trends and find a way to combat the incidents through education. In the first chart, we look at hate crimes broken down by sexuality over the years 2007 to 2013. We look at hate crimes against gay men, lesbian women, straight people and bisexual people. We see a trend that indicates that there are many more gay men who are victims of hate crimes and that heterosexual people have the least hate crimes against them. The data also shows that despite strides to create equality and acceptance for LGBT groups, there still isn't evidence of progress and hate crime rates have remained the same. </p>
+		
+		<p> In the second chart, we look at hate crimes by sexuality in the year 2013. In this chart, we also include hate crimes against transgender individuals. We see that there are significantly more hate-crime incidents related to gay men than any other group. It is interesting to note these discrepencies because we see there is still a lot of work left to be done towards reducing the stigma associated with LGBT individuals</p>
+		
+		</section>
+		
+		<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+		<section id="bar">
+		<p>
+		<a href="https://www2.fbi.gov/ucr/hc2007/table_01.htm" target="_blank">Statistics for 2007</a>.
+		<a href="https://www2.fbi.gov/ucr/hc2008/data/table_01.html" target="_blank">Statistics for 2008</a>.
+		<a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2010/tables/table-1-incidents-offenses-victims-and-known-offenders-by-bias-motivation-2010.xls" target="_blank">Statistics for 2009</a>.
+		<a href="https://www2.fbi.gov/ucr/hc2009/data/table_01.html" target="_blank">Statistics for 2010</a>.
+		<a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2011/tables/table-1" target="_blank">Statistics for 2011</a>.
+		<a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2012/tables-and-data-declarations/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2012.xls" target="_blank">Statistics for 2012</a>.
+		<a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2013/tables/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2013.xls" target="_blank">Statistics for 2013</a>.</p>
+		</section>
+		<div id="ilovepie" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+		<script>
+		$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Hate Crimes by Sexuality of Victims'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://www.fbi.gov/about-us/cjis/ucr/ucr-publications">fbi.gov</a>'
+        },
+        xAxis: {
+            categories: ['Anti-Gay (Male)', 'Anti-Lesbian', 'Anti-Heterosexual', 'Anti-Bisexual'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Number of Incidents',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' incidents'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Year 2013',
+            data: [750, 160, 21, 25]
+        }, {
+            name: 'Year 2012',
+            data: [605, 146, 24, 39]
+        }, {
+            name: 'Year 2011',
+            data: [760, 137, 16, 21]
+        }, {
+            name: 'Year 2010',
+            data: [739, 144, 21, 26]
+        }, {
+            name: 'Year 2009',
+            data: [682, 185, 21, 23]
+        }, {
+            name: 'Year 2008',
+            data: [776, 154, 33, 27]
+        }, {
+            name: 'Year 2007',
+            data: [772, 144, 22, 22]
+        }]
+    });
+});
+		</script>
+		
+</body>
+		<script>
+		$(function () {
+    $('#ilovepie').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Hates Crimes on People by Sexuality in 2013'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Sexual Orientation",
+            colorByPoint: true,
+            data: [{
+                name: "Anti-Gay (Male)",
+                y: 76.6
+            }, {
+                name: "Anti-Lesbian",
+                y: 16.3,
+                sliced: true,
+                selected: true
+            }, {
+                name: "Anti-Heterosexual",
+                y: 2.2
+            }, {
+                name: "Anti-Bisexual",
+                y: 2.6
+            }, {
+                name: "Anti-Transgender",
+                y: 2.4
+            }]
+        }]
+    });
+});
+		</script>
+		<section id="pie">
+		<p><a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2013/tables/1tabledatadecpdf/table_1_incidents_offenses_victims_and_known_offenders_by_bias_motivation_2013.xls" target="_blank">Statistics for 2013</a>.</p>
+</section>		
